@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 import LoadingScreen from './components/LoadingScreen';
-import Navbar from './components/Navbar';
+import JeepneyNavMenu from './components/JeepneyNavMenu';
 import HeroSection from './components/HeroSection';
-import AttractionsSection from './components/AttractionsSection';
 import JeepneyRouteTour from './components/JeepneyRouteTour';
-import CulturalShowcase from './components/CulturalShowcase';
-import VisitorGuide from './components/VisitorGuide';
 import Footer from './components/Footer';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   // Initialize Lenis Smooth Inertial Scrolling (Awwwards standard)
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.25,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
-      smoothWheel: true
+      smoothWheel: true,
+      wheelMultiplier: 0.95
     });
 
     function raf(time) {
@@ -43,29 +42,50 @@ export default function App() {
     setIsLoading(true);
   };
 
+  const handleToggleMute = () => {
+    setIsMuted(prev => !prev);
+  };
+
   return (
-    <div style={{ position: 'relative', width: '100%', minHeight: '100vh', backgroundColor: '#FFFFFF' }}>
+    <div 
+      style={{ 
+        position: 'relative', 
+        width: '100%', 
+        minHeight: '100vh', 
+        backgroundColor: '#F7F6F2',
+        overflowX: 'clip'
+      }}
+    >
       {/* 
-        Awwwards-Level Loading Screen
-        White background with line, percentage counter, and the Philippine Jeepney driving from 0% to 100%
+        Awwwards-Level Philippine Jeepney Road Journey Loading Screen
       */}
       {isLoading && (
         <LoadingScreen onComplete={handleLoadingComplete} />
       )}
 
       {/* 
-        The Official Tourism Landing Page for San Jose City, Nueva Ecija
+        TOP-RIGHT JEEPNEY NAVIGATION & FULL-SCREEN WIPING MENU OVERLAY
       */}
-      <Navbar onReplayLoader={handleReplayLoader} />
-      
+      <JeepneyNavMenu 
+        isMuted={isMuted} 
+        onToggleMute={handleToggleMute} 
+      />
+
+      {/* 
+        MAIN CONTENT: 100VH STICKY SHRINK VIDEO + EXPANDED JEEPNEY SAFARI TOUR
+      */}
       <main>
-        <HeroSection />
-        <AttractionsSection />
+        {/* 100vh Fullscreen Video with Sticky Scroll Shrink into Framed Showcase */}
+        <HeroSection 
+          isMuted={isMuted} 
+          onToggleMute={handleToggleMute} 
+        />
+
+        {/* Interactive Philippine Jeepney Route Tour Safari (Prominently Enlarged Jeep) */}
         <JeepneyRouteTour />
-        <CulturalShowcase />
-        <VisitorGuide />
       </main>
 
+      {/* Official City Tourism Footer */}
       <Footer onReplayLoader={handleReplayLoader} />
     </div>
   );
