@@ -58,6 +58,7 @@ export default function HeroSection({ isMuted, onToggleMute }) {
     >
       {/* 
         TOP-LEFT FLOATING SOUND / MUTE BUTTON (Fixed on screen)
+        Exquisite Swiss-watch frosted glass capsule with live audio wave bars
       */}
       <div 
         style={{
@@ -73,30 +74,30 @@ export default function HeroSection({ isMuted, onToggleMute }) {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
-            padding: '8px 18px',
+            gap: '11px',
+            padding: '9px 20px',
             borderRadius: '999px',
-            backgroundColor: scrollProgress > 0.45 ? 'rgba(255, 255, 255, 0.92)' : 'rgba(10, 18, 26, 0.65)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            border: scrollProgress > 0.45 ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.2)',
+            backgroundColor: scrollProgress > 0.45 ? 'rgba(255, 255, 255, 0.94)' : 'rgba(8, 13, 20, 0.72)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            border: scrollProgress > 0.45 ? '1px solid rgba(0, 0, 0, 0.1)' : '1px solid rgba(255, 255, 255, 0.22)',
             color: scrollProgress > 0.45 ? 'var(--text-headline)' : '#FFFFFF',
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
             fontWeight: 700,
-            letterSpacing: '0.14em',
+            letterSpacing: '0.16em',
             textTransform: 'uppercase',
             cursor: 'pointer',
-            boxShadow: '0 12px 30px -8px rgba(0, 0, 0, 0.25)',
-            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+            boxShadow: scrollProgress > 0.45 ? '0 14px 32px -8px rgba(0, 0, 0, 0.12)' : '0 16px 36px -8px rgba(0, 0, 0, 0.35)',
+            transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)';
-            e.currentTarget.style.boxShadow = '0 16px 36px -10px rgba(0, 0, 0, 0.3)';
+            e.currentTarget.style.boxShadow = '0 18px 40px -8px rgba(0, 0, 0, 0.35)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0) scale(1)';
-            e.currentTarget.style.boxShadow = '0 12px 30px -8px rgba(0, 0, 0, 0.25)';
+            e.currentTarget.style.boxShadow = scrollProgress > 0.45 ? '0 14px 32px -8px rgba(0, 0, 0, 0.12)' : '0 16px 36px -8px rgba(0, 0, 0, 0.35)';
           }}
         >
           {isMuted ? (
@@ -106,15 +107,25 @@ export default function HeroSection({ isMuted, onToggleMute }) {
             </>
           ) : (
             <>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '2.5px', height: '14px' }}>
-                <span className="sound-bar" />
-                <span className="sound-bar" />
-                <span className="sound-bar" />
-                <span className="sound-bar" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', height: '14px' }}>
+                <span className="sound-bar" style={{ backgroundColor: 'var(--seal-emerald)' }} />
+                <span className="sound-bar" style={{ backgroundColor: 'var(--seal-emerald)' }} />
+                <span className="sound-bar" style={{ backgroundColor: 'var(--seal-emerald)' }} />
+                <span className="sound-bar" style={{ backgroundColor: 'var(--seal-emerald)' }} />
               </div>
               <span style={{ color: scrollProgress > 0.45 ? 'var(--seal-green-dark)' : 'var(--seal-gold)' }}>
-                SOUND ON
+                AUDIO LIVE
               </span>
+              <span 
+                style={{
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--seal-emerald)',
+                  boxShadow: '0 0 8px var(--seal-emerald)',
+                  marginLeft: '2px'
+                }} 
+              />
             </>
           )}
         </button>
@@ -180,12 +191,12 @@ export default function HeroSection({ isMuted, onToggleMute }) {
 
         {/* 
           EDITORIAL HEADER ABOVE THE VIDEO (Appears outside video as it shrinks)
-          Vertical accent hairline rule + "San Jose City" + "THE GOLDEN HEARTLAND"
+          Vertical accent hairline rule + Luxury Title + Coordinates
         */}
         <div 
           style={{
             position: 'absolute',
-            top: 'clamp(24px, 5.5vh, 56px)',
+            top: 'clamp(20px, 4.8vh, 52px)',
             left: 0,
             right: 0,
             display: 'flex',
@@ -200,41 +211,60 @@ export default function HeroSection({ isMuted, onToggleMute }) {
             transition: 'opacity 0.2s ease-out'
           }}
         >
-          {/* Vertical Hairline Accent Line (from reference) */}
+          {/* Coordinates Eyebrow */}
+          <div 
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 'clamp(8.5px, 1.4vw, 10px)',
+              letterSpacing: '0.24em',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              color: 'var(--seal-green-dark)',
+              marginBottom: '8px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+          >
+            <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--seal-emerald)' }} />
+            15.7909° N, 120.9986° E • NUEVA ECIJA, PHILIPPINES
+          </div>
+
+          {/* Vertical Hairline Accent Line */}
           <div 
             style={{
               width: '1px',
-              height: 'clamp(20px, 3.8vh, 38px)',
-              backgroundColor: 'rgba(9, 19, 29, 0.35)',
-              marginBottom: '12px'
+              height: 'clamp(16px, 3vh, 32px)',
+              background: 'linear-gradient(to bottom, transparent, rgba(9, 19, 29, 0.4), transparent)',
+              marginBottom: '10px'
             }}
           />
 
           <h2 
             style={{
               fontFamily: 'var(--font-serif-luxury)',
-              fontSize: 'clamp(1.9rem, 4.2vw, 3.5rem)',
-              fontWeight: 400,
+              fontSize: 'clamp(2.1rem, 4.5vw, 3.8rem)',
               color: 'var(--text-headline)',
               letterSpacing: '-0.02em',
-              lineHeight: 1.1,
+              lineHeight: 1.05,
               marginBottom: '6px'
             }}
           >
-            San Jose City
+            <span style={{ fontStyle: 'italic', fontWeight: 300 }}>San Jose</span>{' '}
+            <span style={{ fontWeight: 600 }}>City</span>
           </h2>
 
           <div 
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: 'clamp(9px, 1.8vw, 11px)',
+              fontSize: 'clamp(9px, 1.6vw, 11px)',
               fontWeight: 700,
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: 'var(--seal-green-dark)'
+              color: 'var(--seal-gold-deep)'
             }}
           >
-            THE GOLDEN HEARTLAND • NUEVA ECIJA
+            THE GOLDEN HEARTLAND • GATEWAY TO CAGAYAN VALLEY
           </div>
         </div>
 
@@ -255,10 +285,10 @@ export default function HeroSection({ isMuted, onToggleMute }) {
             borderRadius: `${scrollProgress * 26}px`,
             overflow: 'hidden',
             boxShadow: scrollProgress > 0.04 
-              ? `0 ${scrollProgress * 30}px ${scrollProgress * 70}px -15px rgba(0, 0, 0, ${0.15 + scrollProgress * 0.25})` 
+              ? `0 ${scrollProgress * 32}px ${scrollProgress * 80}px -15px rgba(0, 0, 0, ${0.18 + scrollProgress * 0.3}), 0 0 ${scrollProgress * 40}px rgba(16, 185, 129, 0.15)` 
               : 'none',
-            border: scrollProgress > 0.1 ? '1px solid rgba(0, 0, 0, 0.08)' : 'none',
-            transition: 'box-shadow 0.2s ease-out, border-radius 0.1s linear',
+            border: scrollProgress > 0.1 ? '1px solid rgba(255, 255, 255, 0.25)' : 'none',
+            transition: 'box-shadow 0.25s ease-out, border-radius 0.1s linear',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -285,12 +315,12 @@ export default function HeroSection({ isMuted, onToggleMute }) {
 
         {/* 
           EDITORIAL PROSE BELOW THE VIDEO (Appears outside video as it shrinks)
-          São Tomé style prose and punchline
+          Luxury stats chips + São Tomé style prose and bilingual punchline
         */}
         <div 
           style={{
             position: 'absolute',
-            bottom: 'clamp(18px, 4.2vh, 44px)',
+            bottom: 'clamp(14px, 3.5vh, 38px)',
             left: 0,
             right: 0,
             display: 'flex',
@@ -305,42 +335,77 @@ export default function HeroSection({ isMuted, onToggleMute }) {
             transition: 'opacity 0.2s ease-out'
           }}
         >
-          <div style={{ maxWidth: '680px' }}>
+          <div style={{ maxWidth: '720px' }}>
+            {/* Quick Stats Ribbon */}
+            <div 
+              style={{
+                display: 'inline-flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '10px'
+              }}
+            >
+              {['160 KM FROM MANILA', '32 BARANGAYS', 'TANDUYONG ONION CAPITAL'].map((chip, idx) => (
+                <span
+                  key={idx}
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '9px',
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: 'var(--seal-green-dark)',
+                    backgroundColor: 'rgba(0, 132, 61, 0.08)',
+                    padding: '4px 10px',
+                    borderRadius: '999px',
+                    border: '1px solid rgba(0, 132, 61, 0.15)'
+                  }}
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+
             <p 
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)',
-                lineHeight: 1.7,
+                fontSize: 'clamp(0.92rem, 1.5vw, 1.12rem)',
+                lineHeight: 1.65,
                 color: 'var(--text-body)',
-                marginBottom: '10px'
+                marginBottom: '8px'
               }}
             >
               Cradled by the emerald peaks of the Caraballo Mountains and blessed with the fertile plains of Central Luzon, 
               each landscape tells a story shaped by generations of pride and devotion.
             </p>
+
             <div 
               style={{
                 fontFamily: 'var(--font-serif-luxury)',
-                fontSize: 'clamp(1.15rem, 2.2vw, 1.55rem)',
-                fontWeight: 700,
+                fontSize: 'clamp(1.2rem, 2.2vw, 1.6rem)',
+                fontWeight: 600,
                 color: 'var(--text-headline)',
-                letterSpacing: '-0.01em'
+                letterSpacing: '-0.01em',
+                fontStyle: 'italic'
               }}
             >
-              Laissez-vous transporter. Laissez-vous transformer.
+              "Laissez-vous transporter. Laissez-vous transformer."
             </div>
+
             <div 
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
-                fontWeight: 600,
-                letterSpacing: '0.14em',
+                fontSize: '9.5px',
+                fontWeight: 700,
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
                 color: 'var(--seal-green-dark)',
-                marginTop: '6px'
+                marginTop: '4px'
               }}
             >
-              ALLOW YOURSELF TO BE TRANSPORTED • WELCOME TO SAN JOSE
+              ALLOW YOURSELF TO BE TRANSPORTED • WELCOME TO SAN JOSE CITY
             </div>
           </div>
         </div>

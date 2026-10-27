@@ -245,7 +245,7 @@ export default function JeepneyRouteTour() {
               style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to bottom, rgba(9, 19, 29, 0.6) 0%, rgba(9, 19, 29, 0.3) 50%, rgba(9, 19, 29, 0.72) 100%)',
+                background: 'radial-gradient(circle at 50% 50%, rgba(9, 19, 29, 0.25) 0%, rgba(8, 13, 20, 0.8) 100%), linear-gradient(to bottom, rgba(8, 13, 20, 0.65) 0%, rgba(8, 13, 20, 0.2) 50%, rgba(8, 13, 20, 0.78) 100%)',
                 pointerEvents: 'none'
               }}
             />
@@ -254,52 +254,60 @@ export default function JeepneyRouteTour() {
           <div className="container" style={{ position: 'relative', zIndex: 5, width: '100%', maxWidth: '1240px' }}>
             
             {/* Section Header */}
-            <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto clamp(12px, 2vh, 22px)' }}>
+            <div style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto clamp(10px, 1.8vh, 20px)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
                 fontFamily: 'var(--font-mono)',
-                fontSize: 'clamp(9px, 1.8vw, 11px)',
+                fontSize: 'clamp(9px, 1.6vw, 11px)',
                 fontWeight: 700,
-                letterSpacing: '0.16em',
+                letterSpacing: '0.18em',
                 color: 'var(--seal-gold)',
-                backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                backdropFilter: 'blur(12px)',
-                padding: '6px 14px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(16px)',
+                padding: '6px 16px',
                 borderRadius: '999px',
-                border: '1px solid rgba(255, 255, 255, 0.25)',
+                border: '1px solid rgba(255, 255, 255, 0.22)',
                 textTransform: 'uppercase',
-                marginBottom: '10px'
+                marginBottom: '8px',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)'
               }}>
-                <Navigation size={13} color="var(--seal-gold)" />
-                SCROLL-DRIVEN JEEPNEY SAFARI
+                <Navigation size={12} color="var(--seal-gold)" />
+                EXPEDITION DISPATCH • MAHARLIKA HIGHWAY (AH26)
               </div>
 
               <h2 style={{
                 fontFamily: 'var(--font-serif-luxury)',
-                fontSize: 'clamp(2.4rem, 4.8vw, 4.2rem)',
-                fontWeight: 400,
+                fontSize: 'clamp(2.5rem, 5vw, 4.4rem)',
                 lineHeight: 1.05,
                 letterSpacing: '-0.02em',
                 color: '#FFFFFF',
-                textShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
+                textShadow: '0 4px 24px rgba(0, 0, 0, 0.7)',
                 marginBottom: '8px'
               }}>
-                Ride the Virtual Jeepney Safari
+                <span style={{ fontStyle: 'italic', fontWeight: 300 }}>Ride the</span>{' '}
+                <span style={{ fontWeight: 600 }}>Virtual Jeepney Safari</span>
               </h2>
 
-              <p style={{ 
-                color: 'rgba(255, 255, 255, 0.9)', 
-                fontSize: 'clamp(13px, 1.8vw, 15px)', 
-                lineHeight: 1.5,
-                maxWidth: '680px',
-                margin: '0 auto',
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)'
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 18px',
+                borderRadius: '999px',
+                backgroundColor: 'rgba(8, 13, 20, 0.55)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                color: 'rgba(255, 255, 255, 0.92)',
+                fontSize: 'clamp(12px, 1.6vw, 14px)',
+                fontFamily: 'var(--font-sans)',
+                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.25)'
               }}>
-                <strong>Scroll down</strong> to steer the King of the Road along the Maharlika Highway. 
-                <strong style={{ color: 'var(--seal-gold)' }}> Click the Jeepney</strong> at any destination to enter!
-              </p>
+                <span><strong>Scroll down</strong> to steer the King of the Road.</span>
+                <span style={{ color: 'var(--seal-gold)', fontWeight: 700 }}>•</span>
+                <span style={{ color: 'var(--seal-gold)', fontWeight: 700 }}>Click Jeepney at any stop to enter</span>
+              </div>
             </div>
 
             {/* 
@@ -311,12 +319,12 @@ export default function JeepneyRouteTour() {
               style={{
                 backgroundColor: 'transparent',
                 borderRadius: 'clamp(24px, 3.5vw, 36px)',
-                padding: 'clamp(14px, 2.2vw, 24px) 0',
+                padding: 'clamp(12px, 2vw, 20px) 0',
                 boxShadow: 'none',
                 border: 'none'
               }}
             >
-              {/* Station Selection Pills (High-contrast glass buttons readable over any photo background) */}
+              {/* Station Selection Pills (Luxury transit boarding cards) */}
               <div 
                 className="hide-scrollbar"
                 style={{
@@ -326,7 +334,7 @@ export default function JeepneyRouteTour() {
                   scrollSnapType: 'x mandatory',
                   WebkitOverflowScrolling: 'touch',
                   paddingBottom: '8px',
-                  marginBottom: 'clamp(24px, 3.5vh, 40px)'
+                  marginBottom: 'clamp(20px, 3vh, 36px)'
                 }}
               >
                 {DESTINATIONS.map((dest, idx) => {
@@ -338,24 +346,30 @@ export default function JeepneyRouteTour() {
                       style={{
                         padding: '12px 18px',
                         borderRadius: '16px',
-                        backgroundColor: isCurrent ? 'var(--seal-green)' : 'rgba(10, 22, 34, 0.68)',
-                        backdropFilter: 'blur(16px)',
-                        WebkitBackdropFilter: 'blur(16px)',
+                        backgroundColor: isCurrent ? 'var(--seal-green)' : 'rgba(8, 16, 26, 0.72)',
+                        backdropFilter: 'blur(18px)',
+                        WebkitBackdropFilter: 'blur(18px)',
                         color: '#FFFFFF',
                         fontFamily: 'var(--font-mono)',
                         fontSize: '11px',
                         fontWeight: 600,
                         textAlign: 'left',
-                        minWidth: 'clamp(145px, 20vw, 195px)',
+                        minWidth: 'clamp(150px, 20vw, 205px)',
                         flex: '0 0 auto',
                         scrollSnapAlign: 'start',
-                        border: isCurrent ? '1.5px solid #10B981' : '1px solid rgba(255, 255, 255, 0.18)',
-                        transition: 'all 0.25s ease',
-                        boxShadow: isCurrent ? '0 10px 25px rgba(16, 185, 129, 0.45)' : '0 4px 16px rgba(0, 0, 0, 0.35)',
-                        cursor: 'pointer'
+                        border: isCurrent ? '1.5px solid #34D399' : '1px solid rgba(255, 255, 255, 0.14)',
+                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                        boxShadow: isCurrent 
+                          ? '0 0 28px rgba(16, 185, 129, 0.45), 0 10px 25px rgba(0, 0, 0, 0.4)' 
+                          : '0 6px 18px rgba(0, 0, 0, 0.35)',
+                        cursor: 'pointer',
+                        transform: isCurrent ? 'translateY(-2px)' : 'translateY(0)'
                       }}
                     >
                       <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
                         fontSize: '9.5px',
                         color: isCurrent ? '#FFFFFF' : 'var(--seal-gold)',
                         opacity: isCurrent ? 0.95 : 0.85,
@@ -364,7 +378,18 @@ export default function JeepneyRouteTour() {
                         letterSpacing: '0.08em',
                         fontWeight: 700
                       }}>
-                        STOP 0{dest.stopNumber} • {dest.km.split('•')[0]}
+                        <span>STOP 0{dest.stopNumber} • {dest.km.split('•')[0]}</span>
+                        {isCurrent && (
+                          <span 
+                            style={{
+                              width: '6px',
+                              height: '6px',
+                              borderRadius: '50%',
+                              backgroundColor: '#34D399',
+                              boxShadow: '0 0 8px #34D399'
+                            }} 
+                          />
+                        )}
                       </div>
                       <div style={{ 
                         fontFamily: 'var(--font-sans)', 
@@ -427,7 +452,7 @@ export default function JeepneyRouteTour() {
                         width: '100%',
                         height: 'auto',
                         display: 'block',
-                        filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4))'
+                        filter: 'drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45))'
                       }}
                     />
                   </div>
@@ -436,7 +461,7 @@ export default function JeepneyRouteTour() {
                 {/* 
                   2. THE HIGHWAY LINE:
                   - Rendered AFTER the Jeepney in DOM order!
-                  - Pinned at bottom: 22px with height: 4px.
+                  - Pinned at bottom: 22px with height: 5px.
                   - The Jeepney tires overlap the top of this line just like Image 1!
                 */}
                 <div 
@@ -445,10 +470,11 @@ export default function JeepneyRouteTour() {
                     bottom: '22px',
                     left: 0,
                     right: 0,
-                    height: '4px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.28)',
+                    height: '5px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.22)',
                     borderRadius: '999px',
-                    zIndex: 2
+                    zIndex: 2,
+                    boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.4)'
                   }}
                 >
                   {/* Active Colored Progress Fill (following the Jeepney) */}
@@ -462,7 +488,7 @@ export default function JeepneyRouteTour() {
                       width: '0%',
                       background: 'linear-gradient(90deg, #10B981 0%, #F59E0B 65%, #EF4444 100%)',
                       borderRadius: '999px',
-                      boxShadow: '0 0 12px rgba(16, 185, 129, 0.6)'
+                      boxShadow: '0 0 16px rgba(16, 185, 129, 0.7)'
                     }}
                   />
 
@@ -475,37 +501,41 @@ export default function JeepneyRouteTour() {
                         left: `${mark}%`,
                         top: '-4px',
                         width: '2px',
-                        height: '12px',
+                        height: '13px',
                         backgroundColor: (mark / 100) <= (activeIndex * 0.25) ? '#10B981' : 'rgba(255, 255, 255, 0.45)',
                         transform: 'translateX(-50%)',
-                        borderRadius: '1px'
+                        borderRadius: '1px',
+                        boxShadow: (mark / 100) <= (activeIndex * 0.25) ? '0 0 6px #10B981' : 'none'
                       }}
                     />
                   ))}
 
                   {/* Highway Station Marker Dots */}
-                  {DESTINATIONS.map((dest, idx) => (
-                    <div 
-                      key={dest.id}
-                      onClick={() => scrollToDestination(idx)}
-                      style={{
-                        position: 'absolute',
-                        left: `${dest.pct}%`,
-                        top: '-6px',
-                        width: '16px',
-                        height: '16px',
-                        borderRadius: '50%',
-                        backgroundColor: idx <= activeIndex ? '#10B981' : 'rgba(255, 255, 255, 0.45)',
-                        border: '3px solid #FFFFFF',
-                        transform: 'translateX(-50%)',
-                        cursor: 'pointer',
-                        transition: 'all 0.25s ease',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
-                        zIndex: 3
-                      }}
-                      title={dest.name}
-                    />
-                  ))}
+                  {DESTINATIONS.map((dest, idx) => {
+                    const isDotActive = idx <= activeIndex;
+                    return (
+                      <div 
+                        key={dest.id}
+                        onClick={() => scrollToDestination(idx)}
+                        style={{
+                          position: 'absolute',
+                          left: `${dest.pct}%`,
+                          top: '-6px',
+                          width: '17px',
+                          height: '17px',
+                          borderRadius: '50%',
+                          backgroundColor: isDotActive ? '#10B981' : 'rgba(255, 255, 255, 0.45)',
+                          border: isDotActive ? '3px solid #FFFFFF' : '2.5px solid rgba(255, 255, 255, 0.8)',
+                          transform: 'translateX(-50%)',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          boxShadow: isDotActive ? '0 0 14px rgba(16, 185, 129, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5)' : '0 2px 6px rgba(0, 0, 0, 0.3)',
+                          zIndex: 3
+                        }}
+                        title={dest.name}
+                      />
+                    );
+                  })}
                 </div>
 
                 {/* Highway Route Milestone Labels (exact match to Image 1) */}
@@ -519,22 +549,24 @@ export default function JeepneyRouteTour() {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     fontFamily: 'var(--font-mono)',
-                    fontSize: 'clamp(9px, 1.5vw, 11px)',
+                    fontSize: 'clamp(9px, 1.4vw, 10.5px)',
                     fontWeight: 700,
-                    letterSpacing: '0.12em',
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    letterSpacing: '0.14em',
+                    color: 'rgba(255, 255, 255, 0.72)',
                     textTransform: 'uppercase',
                     pointerEvents: 'none'
                   }}
                 >
-                  <span>KM 00 • START</span>
-                  <span style={{ color: '#10B981', fontWeight: 800 }}>MAHARLIKA HWY (AH26) ROUTE</span>
+                  <span>KM 00 • START MILESTONE</span>
+                  <span style={{ color: '#10B981', fontWeight: 800, textShadow: '0 0 8px rgba(16, 185, 129, 0.4)' }}>
+                    MAHARLIKA HWY (AH26) ROUTE
+                  </span>
                 </div>
               </div>
 
               {/* 
                 SLEEK ACTIVE DESTINATION STATUS STRIP:
-                Refined glass capsule legible over the scenic landmark photos!
+                Refined presidential glass capsule legible over the scenic landmark photos!
               */}
               <div 
                 style={{
@@ -543,43 +575,45 @@ export default function JeepneyRouteTour() {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   gap: '14px',
-                  padding: '16px 24px',
+                  padding: '16px 26px',
                   borderRadius: '24px',
-                  backgroundColor: 'rgba(10, 22, 34, 0.72)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255, 255, 255, 0.16)',
-                  boxShadow: '0 16px 40px rgba(0, 0, 0, 0.45)'
+                  backgroundColor: 'rgba(8, 16, 26, 0.78)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(16, 185, 129, 0.2)',
-                    border: '1px solid rgba(16, 185, 129, 0.4)',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '14px',
+                    backgroundColor: 'rgba(16, 185, 129, 0.22)',
+                    border: '1px solid rgba(16, 185, 129, 0.45)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    flexShrink: 0
+                    flexShrink: 0,
+                    boxShadow: '0 0 16px rgba(16, 185, 129, 0.3)'
                   }}>
-                    <MapPin size={18} color="#10B981" />
+                    <MapPin size={19} color="#10B981" />
                   </div>
                   <div>
                     <div style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '10px',
                       fontWeight: 700,
-                      letterSpacing: '0.12em',
+                      letterSpacing: '0.14em',
                       textTransform: 'uppercase',
-                      color: 'var(--seal-gold)'
+                      color: 'var(--seal-gold)',
+                      marginBottom: '2px'
                     }}>
-                      CURRENT STOP: 0{active.stopNumber} OF 05 • {active.km}
+                      CURRENT STOP: 0{active.stopNumber} OF 05 • {active.km} • {active.tag.toUpperCase()}
                     </div>
                     <div style={{
                       fontFamily: 'var(--font-serif-luxury)',
-                      fontSize: 'clamp(1.4rem, 2.6vw, 1.85rem)',
+                      fontSize: 'clamp(1.45rem, 2.7vw, 1.95rem)',
                       fontWeight: 400,
                       color: '#FFFFFF',
                       lineHeight: 1.1
@@ -595,28 +629,30 @@ export default function JeepneyRouteTour() {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '9px',
-                    padding: '10px 22px',
+                    gap: '10px',
+                    padding: '11px 24px',
                     borderRadius: '999px',
                     backgroundColor: '#FFFFFF',
-                    color: '#0A121A',
+                    color: '#080D14',
                     fontFamily: 'var(--font-sans)',
                     fontSize: '12px',
                     fontWeight: 700,
                     border: 'none',
                     cursor: 'pointer',
-                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-                    transition: 'all 0.25s ease'
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = 'var(--seal-green)';
                     e.currentTarget.style.color = '#FFFFFF';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 132, 61, 0.5)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#FFFFFF';
-                    e.currentTarget.style.color = '#0A121A';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.color = '#080D14';
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.4)';
                   }}
                 >
                   <span>Click Jeep or Button to Enter</span>

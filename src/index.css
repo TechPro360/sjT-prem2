@@ -2,13 +2,15 @@
   /* San Jose City Official Seal Color Palette */
   --seal-green: #00843D;
   --seal-green-dark: #065F2C;
-  --seal-green-glow: rgba(0, 132, 61, 0.25);
+  --seal-green-glow: rgba(0, 132, 61, 0.35);
   --seal-green-soft: #EDF7F1;
+  --seal-emerald: #10B981;
 
   --seal-gold: #FFC72C;
   --seal-gold-deep: #D97706;
-  --seal-gold-glow: rgba(255, 199, 44, 0.35);
+  --seal-gold-glow: rgba(255, 199, 44, 0.4);
   --seal-gold-soft: #FFFBEB;
+  --seal-amber: #F59E0B;
 
   --seal-crimson: #B8263E;
   --seal-crimson-deep: #8E1528;
@@ -20,13 +22,18 @@
   --seal-brown: #5C3D2E;
   --seal-soil: #382417;
 
-  /* Surfaces & Typography */
+  /* Obsidian & Luxury Dark Surfaces */
+  --bg-obsidian: #080D14;
+  --bg-obsidian-card: rgba(10, 20, 32, 0.75);
   --bg-pure: #FFFFFF;
   --bg-subtle: #F9FBFA;
   --bg-editorial: #F7F6F2;
   --bg-card: #FFFFFF;
+  
   --border-light: rgba(15, 23, 42, 0.08);
-  --border-gold: rgba(255, 199, 44, 0.3);
+  --border-glass-light: rgba(255, 255, 255, 0.15);
+  --border-glass-strong: rgba(255, 255, 255, 0.28);
+  --border-gold: rgba(255, 199, 44, 0.35);
 
   --text-headline: #09131D;
   --text-body: #334155;
@@ -270,3 +277,28 @@ button {
 .sound-bar:nth-child(2) { animation-delay: 0.2s; }
 .sound-bar:nth-child(3) { animation-delay: 0.4s; }
 .sound-bar:nth-child(4) { animation-delay: 0.15s; }
+
+/* Luxury Glassmorphism & Glow Styles */
+.luxury-glass-dark {
+  background: rgba(10, 20, 32, 0.76);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.luxury-glass-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.08), inset 0 1px 0 #FFFFFF;
+}
+
+.glow-emerald-hover:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.45);
+}
+
+.glow-gold-hover:hover {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+}
