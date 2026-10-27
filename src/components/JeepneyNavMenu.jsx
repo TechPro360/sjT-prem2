@@ -25,11 +25,11 @@ export default function JeepneyNavMenu({ isMuted, onToggleMute }) {
     },
     {
       number: "03",
-      title: "Gateway Arch (KM 148)",
-      tagline: "Northern Gateway to Onion Heartland",
-      description: "The grand highway arch welcoming travelers to San Jose City as they enter from central Nueva Ecija.",
-      accent: "#60A5FA",
-      href: "#jeepney-tour"
+      title: "Tanduyong Parallax Saga",
+      tagline: "Cultural Spectacle & Heritage Lore",
+      description: "Experience the rhythm of the Tanduyong festival, the onion heartland, and the majestic Caraballo mountain summits in kinetic parallax.",
+      accent: "var(--seal-gold)",
+      href: "#heritage-saga"
     },
     {
       number: "04",

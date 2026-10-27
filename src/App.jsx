@@ -4,6 +4,7 @@ import LoadingScreen from './components/LoadingScreen';
 import JeepneyNavMenu from './components/JeepneyNavMenu';
 import HeroSection from './components/HeroSection';
 import JeepneyRouteTour from './components/JeepneyRouteTour';
+import ParallaxExperienceSection from './components/ParallaxExperienceSection';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -83,6 +84,9 @@ export default function App() {
 
         {/* Interactive Philippine Jeepney Route Tour Safari (Prominently Enlarged Jeep) */}
         <JeepneyRouteTour />
+
+        {/* Dynamic Parallax Experience Section: Tanduyong Saga & Heartland Lore */}
+        <ParallaxExperienceSection />
       </main>
 
       {/* Official City Tourism Footer */}
